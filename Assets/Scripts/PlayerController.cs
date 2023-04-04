@@ -32,6 +32,14 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         else if (movement > 0)
             transform.localScale = new Vector3(1, 1, 1);
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            movementSpeed = 20;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            movementSpeed = 10;
+        }
     }
 
     private void FixedUpdate()
