@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private PlayerControls controls;
     private bool isgrounded;
+    private bool doubleJump;
     private float movement;
 
     // Start is called before the first frame update
@@ -52,6 +54,11 @@ public class PlayerController : MonoBehaviour
         if (isgrounded)
         {
         rb.velocity = new Vector2(rb.velocity.x, jumpStrength);
+        } 
+        else if (doubleJump) 
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpStrength*0.785f);
+            doubleJump = false;
         }
     }
 
@@ -69,6 +76,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isgrounded = false;
+            doubleJump = true;
         }
     }
 
