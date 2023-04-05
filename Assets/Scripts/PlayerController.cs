@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour
         controls = new PlayerControls();
         controls.Player.Jump.started += _ => Jump();
         controls.Player.Movement.performed += ctx => movement = ctx.ReadValue<float>();
+
+        // This line stops movement when the button is released. remove if you want funny movement.
+        controls.Player.Movement.canceled += _ => movement = 0;
     }
 
     private void OnEnable() => controls.Enable();
@@ -79,6 +82,8 @@ public class PlayerController : MonoBehaviour
             doubleJump = true;
         }
     }
+
+    
 
 }
 
