@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/playerscene.unity
+    guid: 3c98db1fb28949e438a5f2e7529f6063
+  - enabled: 1
+    path: Assets/Scenes/nullinmodernday.unity
+    guid: 483c319507e62e443bda2351fbf19c55
+  - enabled: 1
+    path: Assets/Scenes/ModernDay.unity
+    guid: 1820e16a9fe621d4ba998346cc297d90
   m_configObjects: {}

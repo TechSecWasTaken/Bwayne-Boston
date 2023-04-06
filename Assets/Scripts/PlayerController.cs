@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     private bool doubleJump;
     private float movement;
 
-    // Start is called before the first frame update
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
